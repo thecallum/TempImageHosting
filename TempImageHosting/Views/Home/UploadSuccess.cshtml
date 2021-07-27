@@ -8,7 +8,12 @@
 </div>
 
 <p>
-    <a class="d-block" href="@ViewBag.ImageUrl">@ViewBag.ImageUrl</a>
+    <a 
+       class="d-block" 
+       target="_blank" 
+       rel="noreferrer noopener" 
+       href="@ViewBag.ImageUrl"
+    >@ViewBag.ImageUrl</a>
 </p>
 
 <p>
@@ -30,8 +35,6 @@
     const button = document.querySelector("#copyButton");
 
     const imageUrl = button.dataset["imageurl"];
-
-    console.log({ button })
 
     button.addEventListener("click", e => {
         navigator.clipboard.writeText(imageUrl);

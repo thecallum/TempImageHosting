@@ -48,7 +48,9 @@ namespace TempImageHosting
                 BucketName = _bucketName,
                 Key = key,
                 Expires = DateTime.Now.AddSeconds(60),
-                Verb = HttpVerb.PUT
+                Verb = HttpVerb.PUT,
+                //ContentType = "image/jpeg",
+                
             });
 
             return uploadedUrl;
