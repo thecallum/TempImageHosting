@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Upload Success";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Your file was successfully uploaded</h1>
+</div>
+
+<p>
+    <a class="d-block" href="@ViewBag.ImageUrl">@ViewBag.ImageUrl</a>
+</p>
+
+<p>
+    <button data-imageUrl="@ViewBag.ImageUrl"
+            id="copyButton"
+            class="btn btn-primary mt-2">
+        Copy URL
+    </button>
+</p>
+
+<div style="
+    display: flex;
+    justify-content: center;
+">
+  <img src="@ViewBag.ImageUrl" />
+</div>
+
+<script>
+    const button = document.querySelector("#copyButton");
+
+    const imageUrl = button.dataset["imageurl"];
+
+    console.log({ button })
+
+    button.addEventListener("click", e => {
+        navigator.clipboard.writeText(imageUrl);
+    });
+
+
+</script>
