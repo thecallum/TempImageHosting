@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TempImageHosting.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class S3Controller : ControllerBase
